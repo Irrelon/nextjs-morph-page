@@ -1,0 +1,24 @@
+{
+	"name": "example",
+	"description": "My remarkable project with Next.js",
+	"repository": "Irrelon/example",
+	"author": {
+		"name": "Irrelon",
+		"email": "rob@irrelon.com"
+	},
+	"scripts": {
+		"dev": "NODE_ENV=dev node $NODE_DEBUG_OPTION server.js",
+		"build": "next build",
+		"eslint": "eslint components/** pages/** *.js",
+		"eslint-fix": "eslint components/** pages/** *.js --fix",
+		"start": "next start"
+	},
+	"dependencies": {
+		"compression": "^1.7.3",
+		"cookie-parser": "^1.4.3",
+		"express": "^4.16.4",
+		"next": "^7.0.2",
+		"react": "^16.6.3",
+		"react-dom": "^16.6.3"
+	}
+}
