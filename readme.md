@@ -13,7 +13,7 @@ Make sure that your app has a custom App component; if not, [follow the example]
 ```js
 import App, { Container } from 'next/app'
 import React from 'react'
-import { PageTransition } from 'next-page-transitions'
+import { MorphTransition } from 'next-page-transitions'
 
 export default class MyApp extends App {
   static async getInitialProps({ Component, router, ctx }) {
@@ -58,7 +58,7 @@ export default class MyApp extends App {
 ## Whole-Page Based Transitions
 
 When you move to a new page, the `Component` will change, and the
-`PageTransition` component will detect that. Instead of immediately unmounting
+`MorphTransition` component will detect that. Instead of immediately unmounting
 the page, it will apply the `page-transition-exit` class to a wrapper around
 the page to initialize the "exit" transition, and will then apply the
 `page-transition-exit-active` class as well to begin the transition. This is
