@@ -209,28 +209,7 @@ const endMorph = (morphData) => {
 		morphData.targetPlaceholder.parentNode.removeChild(morphData.targetPlaceholder);
 	}
 	
-	morphData.target.style.transition = '';
-	
-	applyStyles(morphData.target, morphData.targetData, {
-		overrides: {
-			marginTop: {
-				applyVal: true
-			},
-			marginLeft: {
-				applyVal: true
-			},
-			marginRight: {
-				applyVal: true
-			},
-			marginBottom: {
-				applyVal: true
-			}
-		}
-	});
-	
-	if (!morphData.target.getAttribute('data-morph-in-place')) {
-		morphData.target.style.position = morphData.targetData.style.position || '';
-	}
+	morphData.target.removeAttribute('style');
 };
 
 const cancelAllMorphs = () => {

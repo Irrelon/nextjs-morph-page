@@ -133,7 +133,6 @@ class MorphTransition extends React.Component {
 		
 		if (this._sourceMorphElements) {
 			// Find the source and target pairs
-			const newSourceElems = [];
 			const promiseArr = [];
 			
 			this._sourceMorphElements.forEach((sourceItem) => {
@@ -145,6 +144,8 @@ class MorphTransition extends React.Component {
 							endMorph(morphData);
 							resolve();
 						});
+					} else {
+						resolve();
 					}
 				}));
 			});
