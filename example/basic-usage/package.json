@@ -1,9 +1,8 @@
 {
-	"name": "example",
-	"description": "My remarkable project with Next.js",
-	"repository": "Irrelon/example",
+	"name": "basic-usage",
+	"description": "Basic morphing example",
 	"author": {
-		"name": "Irrelon",
+		"name": "Rob Evans - Irrelon Software Limited",
 		"email": "rob@irrelon.com"
 	},
 	"scripts": {
@@ -11,7 +10,7 @@
 		"build": "next build",
 		"eslint": "eslint components/** pages/** *.js",
 		"eslint-fix": "eslint components/** pages/** *.js --fix",
-		"start": "next start"
+		"start": "NODE_ENV=production node server.js"
 	},
 	"dependencies": {
 		"compression": "^1.7.3",
