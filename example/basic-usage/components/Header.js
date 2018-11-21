@@ -71,7 +71,7 @@ class Header extends PureComponent {
 					}
 					
 					.profile {
-						background-image: url(/profile1.jpg);
+						background-image: url(/static/profile1.jpg);
 						background-position: 50%;
 						background-size: cover;
 						width: 70px;
@@ -100,17 +100,17 @@ class Header extends PureComponent {
 					}
 					
 					.container.home {
-						background-image: url(/bg3.jpg);
+						background-image: url(/static/bg3.jpg);
 						background-size: cover;
 					}
 					
 					.container.place {
-						background-image: url(/bg2.jpg);
+						background-image: url(/static/bg2.jpg);
 						background-size: cover;
 					}
 					
 					.container.group {
-						background-image: url(/bg1.jpg);
+						background-image: url(/static/bg1.jpg);
 						background-size: cover;
 					}
 				`}</style>

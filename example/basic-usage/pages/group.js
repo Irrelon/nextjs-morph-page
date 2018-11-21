@@ -8,22 +8,22 @@ class Group extends PureComponent {
 					<div className='flex'>
 						<div className='logoBox'>
 							<div className={'imageContainer'} id='mainLogo1' data-morph="100">
-								<img className={'img1'} src={'/wf1.jpg'} />
+								<img className={'img1'} src={'/static/wf1.jpg'} />
 							</div>
 						</div>
 						<div className='logoBox'>
 							<div className={'imageContainer'} id='mainLogo2' data-morph="200">
-								<img className={'img1'} src={'/wf2.jpg'} />
+								<img className={'img1'} src={'/static/wf2.jpg'} />
 							</div>
 						</div>
 						<div className='logoBox'>
 							<div className={'imageContainer'} id='mainLogo3' data-morph="300">
-								<img className={'img1'} src={'/wf3.jpg'} />
+								<img className={'img1'} src={'/static/wf3.jpg'} />
 							</div>
 						</div>
 						<div className='logoBox'>
 							<div className={'imageContainer'} id='mainLogo4' data-morph="400">
-								<img className={'img1'} src={'/wf4.jpg'} />
+								<img className={'img1'} src={'/static/wf4.jpg'} />
 							</div>
 						</div>
 					</div>
