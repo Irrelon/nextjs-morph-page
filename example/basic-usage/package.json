@@ -18,6 +18,7 @@
 		"cookie-parser": "^1.4.3",
 		"express": "^4.16.4",
 		"next": "^7.0.2",
+		"nextjs-morph-page": "^1.0.2",
 		"react": "^16.6.3",
 		"react-dom": "^16.6.3"
 	}

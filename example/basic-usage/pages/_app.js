@@ -1,6 +1,6 @@
 import React, {Fragment} from 'react';
 import App, {Container} from 'next/app';
-import MorphTransition from '../../../lib/index'; // use "nextjs-morph-page" in a real project
+import MorphTransition from 'nextjs-morph-page';
 import Header from "../components/Header";
 
 export default class MyApp extends App {
