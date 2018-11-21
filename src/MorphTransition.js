@@ -122,7 +122,7 @@ class MorphTransition extends React.Component {
 		}
 	}
 	
-	onEnter (elem) {
+	onEnter (pageElem) {
 		//console.log('onEnter');
 		// It's safe to reenable scrolling now
 		this.disableScrolling = false;
@@ -138,12 +138,11 @@ class MorphTransition extends React.Component {
 			
 			this._sourceMorphElements.forEach((sourceItem) => {
 				promiseArr.push(new Promise((resolve) => {
-					const target = elem.querySelector(`#${sourceItem.node.id}[data-morph]`);
+					const target = pageElem.querySelector(`#${sourceItem.node.id}[data-morph]`);
 					
 					if (target) {
 						morphElement(sourceItem, target, parseInt(target.getAttribute('data-morph'), 10) || 600).then((morphData) => {
 							endMorph(morphData);
-							newSourceElems.push(new ScannedNode(target));
 							resolve();
 						});
 					}
@@ -151,7 +150,7 @@ class MorphTransition extends React.Component {
 			});
 			
 			Promise.all(promiseArr).then(() => {
-				this._sourceMorphElements = newSourceElems;
+				this.onMorphComplete(pageElem);
 			});
 		}
 	}
@@ -163,23 +162,34 @@ class MorphTransition extends React.Component {
 		})
 	}
 	
-	onEntered (elem) {
+	scanDomForMorphElements (pageElem) {
+		const morphElems = pageElem.querySelectorAll('[data-morph]');
+		const sourceSnapshot = [];
+		
+		if (morphElems && morphElems.length) {
+			for (let i = 0; i < morphElems.length; i++) {
+				sourceSnapshot.push(new ScannedNode(morphElems[i]));
+			}
+		}
+		
+		return sourceSnapshot;
+	}
+	
+	onEntered (pageElem) {
 		//console.log('onEntered');
 		this.setState({
 			state: 'entered',
 		});
 		
-		const morphElems = elem.querySelectorAll('[data-morph]');
-		
-		if (morphElems && morphElems.length) {
-			const sourceSnapshot = [];
-			
-			for (let i = 0; i < morphElems.length; i++) {
-				sourceSnapshot.push(new ScannedNode(morphElems[i]));
-			}
-			
-			this._sourceMorphElements = sourceSnapshot;
-		}
+		setTimeout(() => {
+			this._sourceMorphElements = this.scanDomForMorphElements(pageElem);
+			//console.log('On entered detected ' + this._sourceMorphElements.length + ' new source elements');
+		}, 1);
+	}
+	
+	onMorphComplete (pageElem) {
+		this._sourceMorphElements = this.scanDomForMorphElements(pageElem);
+		//console.log('On entered detected ' + this._sourceMorphElements.length + ' new source elements');
 	}
 	
 	onExit () {
@@ -209,6 +219,7 @@ class MorphTransition extends React.Component {
 	}
 	
 	onChildLoaded () {
+		//console.log('Child loaded');
 		if (this.state.timeoutId) {
 			clearTimeout(this.state.timeoutId)
 		}
