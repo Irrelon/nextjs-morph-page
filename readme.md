@@ -1,5 +1,7 @@
 # Irrelon Next.js Morph Page
 
+This is a fork of the original work done here: https://github.com/illinois/next-page-transitions
+
 ## Install
 
 ```bash
