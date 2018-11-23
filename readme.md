@@ -1,4 +1,4 @@
-# Irrelon Next.js Morph Page
+# Next.js Page Transitions with Element Morphing
 
 This is a fork of the original work done here https://github.com/illinois/next-page-transitions and adds new functionality to morph pages at an element-level.
 
