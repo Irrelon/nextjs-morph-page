@@ -93,6 +93,6 @@ E.g:
 
 Any css applied to the page 2 element "test1" will be applied as the morph transitions.
 
-> VERY IMPORTANT: The plugin does not currently support having custom styles on an
-element. If you use styles directly on an element via the style="" attribute they will
+> VERY IMPORTANT: The plugin does not currently support having style attributes on an
+element. If you apply styles directly on an element via the style="" attribute they will
 be wiped out when a morph is applied. Use css selectors only.
