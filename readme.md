@@ -77,6 +77,11 @@ page. To indicate an element to be morphed you must provide the element with
 an id that is the SAME ON BOTH PAGES as well as a data-morph attribute indicating
 the number of milliseconds the element's morph should take.
 
+The data-morph attribute only needs to exist on the source page. If you want
+transitions to occur on that element when the user navigates back from page 2
+to page 1, as well as from page 1 to page 2, put a data-morph on the element
+on page 2 as well as page 1.
+
 E.g:
 
 #### Page 1
