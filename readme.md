@@ -1,4 +1,12 @@
-# Irrelon Next.js Morph Page
+# Next.js Page Transitions with Element Morphing
+
+This is a fork of the original work done here https://github.com/illinois/next-page-transitions and adds new functionality to morph pages at an element-level.
+
+## Demo
+
+You can see a basic demo of this library in action here: https://basic-usage-uwkrojwfad.now.sh/
+
+> The demo is hosted on now.js. Start-up times on the now.js containers can take a long time if they haven't been used for a while. Just click the link and be patient :)
 
 ## Install
 
@@ -98,6 +106,6 @@ E.g:
 
 Any css applied to the page 2 element "test1" will be applied as the morph transitions.
 
-> VERY IMPORTANT: The plugin does not currently support having custom styles on an
-element. If you use styles directly on an element via the style="" attribute they will
+> VERY IMPORTANT: The plugin does not currently support having style attributes on an
+element. If you apply styles directly on an element via the style="" attribute they will
 be wiped out when a morph is applied. Use css selectors only.
