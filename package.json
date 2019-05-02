@@ -1,6 +1,6 @@
 {
   "name": "nextjs-morph-page",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "A next.js page transition component that allows you to morph individual elements from one page to another, identified by their element id attribute.",
   "main": "lib/index.js",
   "files": [

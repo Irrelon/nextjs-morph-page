@@ -278,7 +278,7 @@ class MorphTransition extends React.Component {
 MorphTransition.propTypes = {
 	children: PropTypes.node.isRequired,
 	classNames: PropTypes.string.isRequired,
-	timeout: PropTypes.shape.isRequired,
+	timeout: PropTypes.number.isRequired,
 	loadingComponent: PropTypes.element,
 	loadingDelay: PropTypes.number,
 	loadingCallbackName: PropTypes.string,
