@@ -22,17 +22,17 @@ function areChildrenDifferent (oldChildren, newChildren) {
 function buildClassName (className, state) {
 	switch (state) {
 		case 'enter':
-			return `${className}.enter`;
+			return `${className} enter`;
 		case 'entering':
-			return `${className}.enter ${className}.enter.active`;
+			return `${className} enter ${className} enter active`;
 		case 'entered':
-			return `${className}.enter.done`;
+			return `${className} enter.done`;
 		case 'exit':
-			return `${className}.exit`;
+			return `${className} exit`;
 		case 'exiting':
-			return `${className}.exit ${className}.exit.active`;
+			return `${className} exit ${className} exit active`;
 		case 'exited':
-			return `${className}.exit.done`;
+			return `${className} exit done`;
 		default:
 			return ''
 	}
@@ -131,29 +131,35 @@ class MorphTransition extends React.Component {
 			showLoading: false
 		});
 		
-		if (this._sourceMorphElements) {
-			// Find the source and target pairs
-			const promiseArr = [];
-			
-			this._sourceMorphElements.forEach((sourceItem) => {
-				promiseArr.push(new Promise((resolve) => {
-					const target = pageElem.querySelector(`#${sourceItem.node.id}[data-morph]`);
-					
-					if (target) {
-						morphElement(sourceItem, target, parseInt(target.getAttribute('data-morph'), 10) || 600).then((morphData) => {
-							endMorph(morphData);
-							resolve();
-						});
-					} else {
-						resolve();
-					}
-				}));
-			});
-			
-			Promise.all(promiseArr).then(() => {
-				this.onMorphComplete(pageElem);
-			});
+		if (!this._sourceMorphElements) {
+			return;
 		}
+		
+		// Find the source and target pairs
+		const promiseArr = [];
+		
+		this._sourceMorphElements.forEach((sourceItem) => {
+			const sourceNode = sourceItem.node;
+			const customTargetSelector = sourceNode.getAttribute("data-morph-target");
+			const targetSelector = customTargetSelector || "#" + sourceItem.node.id;
+			
+			promiseArr.push(new Promise((resolve) => {
+				const target = pageElem.querySelector(targetSelector);
+				
+				if (target) {
+					morphElement(sourceItem, target, parseInt(sourceNode.getAttribute('data-morph-ms'), 10) || 600).then((morphData) => {
+						endMorph(morphData);
+						resolve();
+					});
+				} else {
+					resolve();
+				}
+			}));
+		});
+		
+		Promise.all(promiseArr).then(() => {
+			this.onMorphComplete(pageElem);
+		});
 	}
 	
 	onEntering () {
@@ -164,7 +170,7 @@ class MorphTransition extends React.Component {
 	}
 	
 	scanDomForMorphElements (pageElem) {
-		const morphElems = pageElem.querySelectorAll('[data-morph]');
+		const morphElems = pageElem.querySelectorAll('[data-morph-ms]');
 		const sourceSnapshot = [];
 		
 		if (morphElems && morphElems.length) {
