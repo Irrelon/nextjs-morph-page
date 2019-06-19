@@ -21,7 +21,7 @@ Make sure that your app has a custom App component; if not, [follow the example]
 ```js
 import App, { Container } from 'next/app'
 import React from 'react'
-import { MorphTransition } from 'next-page-transitions'
+import MorphTransition from 'nextjs-morph-page'
 
 export default class MyApp extends App {
   static async getInitialProps({ Component, router, ctx }) {
@@ -38,21 +38,21 @@ export default class MyApp extends App {
     const { Component, pageProps } = this.props;
     return (
       <Container>
-        <MorphTransition timeout={300} classNames="page-transition">
+        <MorphTransition timeout={300} classNames="morph">
           <Component {...pageProps} />
         </MorphTransition>
         <style jsx global>{`
-          .page-transition-enter {
+          .morph.enter {
             opacity: 0;
           }
-          .page-transition-enter-active {
+          .morph.enter.active {
             opacity: 1;
             transition: opacity 300ms;
           }
-          .page-transition-exit {
+          .morph.exit {
             opacity: 1;
           }
-          .page-transition-exit-active {
+          .morph.exit.active {
             opacity: 0;
             transition: opacity 300ms;
           }
@@ -67,14 +67,14 @@ export default class MyApp extends App {
 
 When you move to a new page, the `Component` will change, and the
 `MorphTransition` component will detect that. Instead of immediately unmounting
-the page, it will apply the `page-transition-exit` class to a wrapper around
+the page, it will apply the `morph.exit` class to a wrapper around
 the page to initialize the "exit" transition, and will then apply the
-`page-transition-exit-active` class as well to begin the transition. This is
+`morph.exit.active` class as well to begin the transition. This is
 very similar to how the
 [react-transition-group](https://github.com/reactjs/react-transition-group)
 library does things things. After the previous page has been animated out,
-the new page is mounted and a similar pair of `.page-transition-enter` and
-`page-transition-enter-active` classes will be applied. This process repeats
+the new page is mounted and a similar pair of `.morph.enter` and
+`morph.enter.active` classes will be applied. This process repeats
 every time a new page is navigated to.
 
 ## Element-Based Transitions

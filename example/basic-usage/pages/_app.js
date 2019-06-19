@@ -22,7 +22,7 @@ export default class MyApp extends App {
 		
 		return (
 			<Container>
-				<MorphTransition timeout={0} classNames="page-transition">
+				<MorphTransition timeout={0} classNames="morph">
 					<Fragment>
 						<Header page={this.props.router.pathname.slice(1).replace(/\//g, '-')} />
 						<Component {...pageProps} />
@@ -40,17 +40,18 @@ export default class MyApp extends App {
 						margin-left: auto;
 						margin-right: auto;
 					}
-					.page-transition-enter .header {
+					
+					.morph.enter.header {
 						opacity: 0.5;
 					}
-					.page-transition-enter-active .header {
+					.morph.enter.active .header {
 						opacity: 1;
 						transition: opacity 1000ms;
 					}
-					.page-transition-exit .header {
+					.morph.exit .header {
 						opacity: 0.5;
 					}
-					.page-transition-exit-active .header {
+					.morph.exit.active .header {
 						opacity: 0;
 						transition: opacity 1000ms;
 					}

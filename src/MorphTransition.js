@@ -22,17 +22,17 @@ function areChildrenDifferent (oldChildren, newChildren) {
 function buildClassName (className, state) {
 	switch (state) {
 		case 'enter':
-			return `${className}-enter`;
+			return `${className}.enter`;
 		case 'entering':
-			return `${className}-enter ${className}-enter-active`;
+			return `${className}.enter ${className}.enter.active`;
 		case 'entered':
-			return `${className}-enter-done`;
+			return `${className}.enter.done`;
 		case 'exit':
-			return `${className}-exit`;
+			return `${className}.exit`;
 		case 'exiting':
-			return `${className}-exit ${className}-exit-active`;
+			return `${className}.exit ${className}.exit.active`;
 		case 'exited':
-			return `${className}-exit-done`;
+			return `${className}.exit.done`;
 		default:
 			return ''
 	}
