@@ -7,22 +7,22 @@ class Place extends PureComponent {
 				<div className='containerWrap'>
 					<div className={'row wrap'}>
 						<div className='column'>
-							<div className={'imageContainer'} id='mainLogo1' data-morph="100">
+							<div className={'imageContainer'} id='mainLogo1' data-morph-ms="100">
 								<img className={'img1'} src={'/static/wf1.jpg'} />
 							</div>
 						</div>
 						<div className='column'>
-							<div className={'imageContainer'} id='mainLogo2' data-morph="200">
+							<div className={'imageContainer'} id='mainLogo2' data-morph-ms="200">
 								<img className={'img1'} src={'/static/wf2.jpg'} />
 							</div>
 						</div>
 						<div className='column'>
-							<div className={'imageContainer'} id='mainLogo3' data-morph="300">
+							<div className={'imageContainer'} id='mainLogo3' data-morph-ms="300">
 								<img className={'img1'} src={'/static/wf3.jpg'} />
 							</div>
 						</div>
 						<div className='column'>
-							<div className={'imageContainer'} id='mainLogo4' data-morph="400">
+							<div className={'imageContainer'} id='mainLogo4' data-morph-ms="400">
 								<img className={'img1'} src={'/static/wf4.jpg'} />
 							</div>
 						</div>
@@ -30,10 +30,10 @@ class Place extends PureComponent {
 					<div className={'row'}>
 						<div className={'column'}>
 							<div>
-								<h1 id={'pageTitle'} data-morph="300">Places</h1>
+								<h1 id={'pageTitle'} data-morph-ms="300">Places</h1>
 							</div>
 							<div>
-								<p id={'pageDetail'} data-morph="300">Place page with some other text.</p>
+								<p id={'pageDetail'} data-morph-ms="300">Place page with some other text.</p>
 							</div>
 						</div>
 					</div>

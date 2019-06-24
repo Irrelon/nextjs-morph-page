@@ -4,7 +4,7 @@ import Link from "next/link";
 class Header extends PureComponent {
 	render () {
 		return (
-			<div className={'container ' + this.props.page} id={'headerBack'} data-morph="300" data-morph-in-place="true">
+			<div className={'container ' + this.props.page} id={'headerBack'} data-morph-ms="300" data-morph-in-place="true">
 				<div className={'nav'}>
 					<div className={'containerWrap'}>
 						<Link scroll={true} href={{pathname: '/home'}} as={`/`}>
@@ -21,7 +21,7 @@ class Header extends PureComponent {
 				<div className={'containerWrap'}>
 					<div className={'row'}>
 						<div className={'column'}>
-							<div className={'profile ' + this.props.page} id={'profileImage'} data-morph="300" />
+							<div className={'profile ' + this.props.page} id={'profileImage'} data-morph-ms="300" />
 						</div>
 					</div>
 				</div>

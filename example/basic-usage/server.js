@@ -49,7 +49,7 @@ app.prepare().then(() => {
 		});
 	});
 	
-	server.use(express.static('static'));
+	server.use("/static", express.static('static'));
 	
 	server.get('*', (req, res) => {
 		if (req.originalUrl.indexOf('/_next/') !== 0) {
