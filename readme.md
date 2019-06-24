@@ -85,6 +85,13 @@ page. To indicate an element to be morphed you must provide the element with
 an id that is the SAME ON BOTH PAGES as well as a data-morph-ms attribute indicating
 the number of milliseconds the element's morph should take.
 
+> There is a new experimental way to set the target of a morph operation from the
+source element, via the data-morph-target attribute. This attribute takes a CSS
+selector that is compatible with document.querySelector() and attempts to find
+the target to morph to using that selector. Make sure the selector only returns
+a single element as only the first matching element will be used as a target.
+e.g. \<div class="foo" bar="true">...\</div> can be targeted by '.foo[bar="true"]'
+
 The data-morph-ms attribute only needs to exist on the source page. If you want
 transitions to occur on that element when the user navigates back from page 2
 to page 1, as well as from page 1 to page 2, put a data-morph-ms on the element
