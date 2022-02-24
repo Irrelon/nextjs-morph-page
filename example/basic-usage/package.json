@@ -6,19 +6,21 @@
 		"email": "rob@irrelon.com"
 	},
 	"scripts": {
-		"dev": "NODE_ENV=dev node $NODE_DEBUG_OPTION server.js",
+		"dev": "next dev",
 		"build": "next build",
+		"start": "next start",
+		"lint": "next lint",
 		"eslint": "eslint components/** pages/** *.js",
-		"eslint-fix": "eslint components/** pages/** *.js --fix",
-		"start": "NODE_ENV=production node server.js"
+		"eslint-fix": "eslint components/** pages/** *.js --fix"
 	},
 	"dependencies": {
-		"compression": "^1.7.3",
-		"cookie-parser": "^1.4.3",
-		"express": "^4.16.4",
-		"next": "^7.0.2",
+		"eslint": "^8.9.0",
+		"next": "12.1.0",
 		"nextjs-morph-page": "^2.0.2",
-		"react": "^16.6.3",
-		"react-dom": "^16.6.3"
+		"react": "17.0.2",
+		"react-dom": "17.0.2"
+	},
+	"devDependencies": {
+		"eslint-config-next": "12.1.0"
 	}
 }
