@@ -15,6 +15,7 @@ npm i nextjs-morph-page --save
 ```
 
 ## Usage
+> If you have browser dev tools enabled and you disable network cache, images may appear to morph incorrectly. If you are seeing weird morphing on images, close your dev tools or re-enable network cache while testing morphs on images.
 
 Make sure that your app has a custom App component; if not, [follow the example](https://github.com/zeit/next.js#custom-app) on the Next.js readme to create one. Then, in your App's render method, wrap the page Component in a MorphTransition component.
 
