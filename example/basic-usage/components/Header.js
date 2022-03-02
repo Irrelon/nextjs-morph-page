@@ -20,7 +20,7 @@ function Header(props) {
 			<div className={'containerWrap'}>
 				<div className={'row'}>
 					<div className={'column'}>
-						<div className={'profile ' + props.page} id={'profileImage'} data-morph-ms="300"/>
+						<div className={'profile ' + props.page} id={'1'} data-morph-ms="300"/>
 					</div>
 				</div>
 			</div>
