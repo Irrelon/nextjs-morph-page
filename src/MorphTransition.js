@@ -153,7 +153,13 @@ class MorphTransition extends React.Component {
 			}
 			
 			promiseArr.push(new Promise((resolve) => {
-				const target = pageElem[selectorType](targetSelector);
+				let target;
+
+				if (selectorType === "getElementById") {
+					target = document.getElementById(targetSelector);
+				} else {
+					target = pageElem.querySelector(targetSelector);
+				}
 				
 				if (target) {
 					morphElement(sourceItem, target, parseInt(sourceNode.getAttribute('data-morph-ms'), 10) || 600).then((morphData) => {
