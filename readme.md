@@ -4,9 +4,9 @@ This is a fork of the original work done here https://github.com/illinois/next-p
 
 ## Demo
 
-You can see a basic demo of this library in action here: https://basic-usage-uwkrojwfad.now.sh/
+You can see a basic demo of this library in action here: [https://basic-usage-uwkrojwfad.now.sh/](https://nextjs-morph-page.vercel.app/)
 
-> The demo is hosted on now.js. Start-up times on the now.js containers can take a long time if they haven't been used for a while. Just click the link and be patient :)
+> The demo is hosted on Vercel. Start-up times on the Vercel endpoints can take a while if they haven't been visited for some time. Just click the link and be patient :)
 
 ## Install
 
